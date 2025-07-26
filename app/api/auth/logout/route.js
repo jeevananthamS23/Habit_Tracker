@@ -1,4 +1,4 @@
-import { clearSessionCookie } from '../../../../lib/auth'; // Import session utility
+import { generateClearSessionCookie } from '../../../../lib/auth'; // Import the new utility
 
 /**
  * Handles POST requests for user logout.
@@ -8,12 +8,16 @@ import { clearSessionCookie } from '../../../../lib/auth'; // Import session uti
  */
 export async function POST(req) {
   try {
+    // Generate the cookie string to clear the session
+    const clearCookie = generateClearSessionCookie();
+
     const response = new Response(JSON.stringify({ message: 'Logout successful' }), {
       status: 200,
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Set-Cookie': clearCookie, // Set the cookie here
+      },
     });
-
-    clearSessionCookie(response); // Clear the session cookie
 
     return response;
   } catch (error) {

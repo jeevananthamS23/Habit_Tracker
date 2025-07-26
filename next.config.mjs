@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // Add 'placehold.co' to the list of allowed image domains
-    domains: ['placehold.co'],
+    // Use remotePatterns for allowed image domains
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'placehold.co',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+    dangerouslyAllowSVG: true, // Allow SVG images from placehold.co
   },
 };
 
