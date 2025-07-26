@@ -1,0 +1,139 @@
+
+.landingPage{
+  background-image: url("/Home.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.landingPage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-top: 45px;
+  padding-right: 130px;
+  padding-left: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+   text-shadow: 0 0 6px#DB7093;
+  display: flex;
+  align-items: center;
+}
+
+.logo span {
+  margin-left: 8px;
+}
+
+
+
+.goToApp {
+  color: white;
+  text-shadow: 0 0 6px whitesmoke;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 20px;
+}
+
+.goToApp:hover {
+  text-shadow: 0 0 0px white;
+  color:#DB7093;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top:100px;
+  text-shadow: 0 0 2px white;
+
+}
+
+.tagline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color:white;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.subTagline {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.actionButton {
+  background-color:white;
+  color: black;
+  padding: 15px 30px;
+    text-shadow: 0 0 5px white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  margin-top:20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  opacity: 0.8;
+}
+
+.actionButton:hover {
+  background-color:rgb(144, 67, 67);
+  transform: translateY(-2px);
+}
+
+.actionButton:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .goToApp {
+    margin-top: 10px;
+  }
+
+  .tagline {
+    font-size: 1.8rem;
+  }
+
+  .subTagline {
+    font-size: 1rem;
+  }
+
+  .actionButton {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+
+  .imageContainer {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tagline {
+    font-size: 1.5rem;
+  }
+}

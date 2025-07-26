@@ -1,0 +1,257 @@
+/* src/components/styles/Dashboard.module.css */
+
+.dashboardContainer {
+  display: flex;
+  min-height: calc(100vh - 70px); /* Adjust for header height */
+  background-color: var(--background-color);
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 20px 30px;
+  overflow-y: auto; /* Enable scrolling for main content */
+}
+
+.dateNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: var(--white-color);
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.navButton {
+  background-color: var(--light-green);
+  color: var(--dark-green);
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.navButton:hover {
+  background-color: var(--primary-green);
+  color: var(--white-color);
+  transform: translateY(-1px);
+}
+
+.navButton:active {
+  transform: translateY(0);
+}
+
+.dateDisplay {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto; /* Allow horizontal scrolling for dates */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none;  /* Hide scrollbar for IE/Edge */
+  padding-bottom: 5px; /* Space for scrollbar if it appears */
+}
+
+.dateDisplay::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.dateColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: var(--light-green);
+  color: var(--dark-green);
+  min-width: 70px; /* Minimum width for each date column */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.dateColumn.currentDay {
+  background-color: var(--primary-green);
+  color: var(--white-color);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
+}
+
+.dayOfWeek {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.dayOfMonth {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.habitList {
+  background-color: var(--white-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.noHabitsMessage {
+  text-align: center;
+  padding: 50px;
+  color: var(--light-text-color);
+  font-size: 1.1rem;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modalContent {
+  background-color: var(--white-color);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--light-text-color);
+  transition: color 0.2s ease;
+}
+
+.closeButton:hover {
+  color: var(--text-color);
+}
+
+.modalTitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modalInput {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.modalInput:focus {
+  outline: none;
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.modalButton {
+  background-color: var(--primary-green);
+  color: var(--white-color);
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modalButton:hover {
+  background-color: var(--dark-green);
+  transform: translateY(-2px);
+}
+
+.modalButton:active {
+  transform: translateY(0);
+}
+
+.modalError {
+  color: var(--error-color);
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboardContainer {
+    flex-direction: column; /* Stack sidebar and main content */
+  }
+
+  .mainContent {
+    padding: 15px;
+  }
+
+  .dateNavigation {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .dateDisplay {
+    width: 100%;
+    justify-content: flex-start; /* Align dates to start */
+  }
+
+  .dateColumn {
+    min-width: 60px;
+    padding: 8px;
+  }
+
+  .dayOfMonth {
+    font-size: 1.2rem;
+  }
+
+  .modalContent {
+    padding: 25px;
+  }
+
+  .modalTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainContent {
+    padding: 10px;
+  }
+
+  .dateColumn {
+    min-width: 50px;
+  }
+
+  .dayOfMonth {
+    font-size: 1rem;
+  }
+
+  .modalContent {
+    padding: 20px;
+  }
+
+  .modalTitle {
+    font-size: 1.3rem;
+  }
+
+  .modalInput, .modalButton {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+}

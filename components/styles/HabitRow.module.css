@@ -1,0 +1,124 @@
+/* src/components/styles/HabitRow.module.css */
+
+.habitRow {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.habitControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-right: 20px;
+}
+
+.controlButton {
+  background-color: var(--light-green);
+  color: var(--dark-green);
+  border: 1px solid var(--primary-green);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.controlButton:hover {
+  background-color: var(--primary-green);
+  color: var(--white-color);
+  transform: scale(1.05);
+}
+
+.controlButton:active {
+  transform: scale(0.98);
+}
+
+.habitName {
+  font-weight: 500;
+  color: var(--text-color);
+  flex-grow: 1; /* Allows the name to take available space */
+}
+
+.dateGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+  gap: 5px;
+  margin-left: 20px;
+  flex-grow: 2; /* Allows the grid to take more space */
+  max-width: 600px; /* Limit max width for grid */
+}
+
+.dateCell {
+  width: 40px; /* Fixed width for date cells */
+  height: 40px; /* Fixed height for date cells */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background-color: var(--light-green);
+  color: var(--dark-green);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.dateCell:hover {
+  background-color: #dcedc8;
+  transform: translateY(-2px);
+}
+
+.dateCell.completed {
+  background-color: var(--primary-green);
+  color: var(--white-color);
+}
+
+.dateCell.completed:hover {
+  background-color: var(--dark-green);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .habitRow {
+    flex-wrap: wrap; /* Allow elements to wrap */
+    justify-content: center;
+    text-align: center;
+  }
+
+  .habitControls {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .habitName {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .dateGrid {
+    grid-template-columns: repeat(auto-fit, minmax(35px, 1fr)); /* More flexible grid */
+    margin-left: 0;
+    width: 100%;
+    max-width: unset; /* Remove max-width for smaller screens */
+  }
+
+  .dateCell {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dateCell {
+    width: 30px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+}

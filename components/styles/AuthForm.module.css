@@ -1,0 +1,189 @@
+.authContainer {
+    background-image: url("/Auth.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.authContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-top: 35px;
+  padding-right:125px;
+  padding-left: 90px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #e1c732;
+  text-shadow: 0 0 10px #e1c732;
+  display: flex;
+  align-items: center;
+}
+
+.logo span {
+  margin-left: 8px;
+}
+
+
+.goToApp {
+  color:#40E0D0;
+ text-shadow: 0 0 10px #40E0D0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.goToApp:hover {
+  color: white;
+}
+
+.authCard {
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px var(--shadow-color);
+  width: 100%;
+  margin-top: 60px;
+  max-width: 450px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+ color:whitesmoke;
+  font-weight: 1000px;
+ text-shadow: 0 0 3px rgb(55, 55, 128);
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1rem;
+ color:whitesmoke;
+  font-weight: 1000px;
+   text-shadow: 0 0 10px white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+   text-shadow: 0 0 10px white;
+}
+
+.formGroup {
+  text-align: left;
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgb(83, 226, 248);
+  border-radius: 8px;
+  font-size: 1rem;
+  color:black;
+  font-weight: 100px;
+  background-color: whitesmoke;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color:rgb(101, 197, 235);
+  box-shadow: 0 0 0 2px rgb(101, 197, 235);
+}
+
+.submitButton {
+  background-color:#7FFFD4;
+  color: black;
+  font-weight: 50px;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.submitButton:hover {
+  background-color: #E0FFFF;
+  transform: translateY(-2px);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+.errorMessage {
+  color:#FF0000;
+  font-size: 0.9rem;
+  text-shadow:none;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.termsText {
+  font-size: 0.85rem;
+  color:whitesmoke;
+  font-weight: 1000px;
+  margin-top: 20px;
+}
+
+.termsText a {
+  color:#4FFFB0;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .goToApp {
+    margin-top: 10px;
+  }
+
+  .authCard {
+    padding: 30px;
+    max-width: 380px;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .authCard {
+    padding: 25px;
+    max-width: 90%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .submitButton {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
