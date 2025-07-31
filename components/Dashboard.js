@@ -1,12 +1,12 @@
 'use client'; 
 import { useState, useEffect, useCallback } from 'react';
-import Header from './Header';
+import { useRouter } from 'next/router';
 import Sidebar from './Sidebar';
 import HabitRow from './HabitRow';
 import styles from './styles/Dashboard.module.css'; 
 
 
-export default function Dashboard({ userName }) {
+export default function Dashboard() {
   const [habits, setHabits] = useState([]);
   const [currentDate, setCurrentDate] = useState(new Date());
   const [showModal, setShowModal] = useState(false);
@@ -180,7 +180,6 @@ export default function Dashboard({ userName }) {
 
   return (
     <>
-      <Header userName={userName} />
       <div className={styles.dashboardContainer}>
         <Sidebar habits={habits} onAddHabitClick={handleAddHabitClick} />
         <main className={styles.mainContent}>
@@ -197,8 +196,16 @@ export default function Dashboard({ userName }) {
                     key={dateString}
                     className={`${styles.dateColumn} ${isCurrentDay ? styles.currentDay : ''}`}
                   >
-                    <span className={styles.dayOfWeek}>{date.toLocaleString('en-US', { weekday: 'short' }).toUpperCase()}</span>
-                    <span className={styles.dayOfMonth}>{date.getDate()}</span>
+                   <span className={styles.dayOfWeek}>
+  {date.toLocaleString('en-US', { weekday: 'short' }).toUpperCase()}
+</span>
+<span className={styles.dayOfMonth}>
+  {date.getDate()}
+</span>
+<span className={styles.monthName}>
+  {date.toLocaleString('en-US', { month: 'short' })}
+</span>
+
                   </div>
                 );
               })}

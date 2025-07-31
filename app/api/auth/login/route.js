@@ -1,28 +1,22 @@
-import dbConnect from '../../../../lib/mongodb'; // Adjust path as necessary
-import User from '../../../../models/User'; // Adjust path as necessary
-import { generateSessionCookie } from '../../../../lib/auth'; // Import the new utility
+import dbConnect from '../../../../lib/mongodb'; 
+import User from '../../../../models/User'; 
+import { generateSessionCookie } from '../../../../lib/auth';
 
-/**
- * Handles POST requests for user login.
- * Connects to the database, authenticates the user, and sets a session cookie.
- * @param {Request} req - The Next.js request object.
- * @returns {Response} The Next.js response object.
- */
+
 export async function POST(req) {
-  await dbConnect(); // Connect to MongoDB
+  await dbConnect(); 
 
   try {
     const { email, password } = await req.json();
 
-    // Basic validation
-    if (!email || !password) {
+        if (!email || !password) {
       return new Response(JSON.stringify({ message: 'Please enter all fields' }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       });
     }
 
-    // Find user by email
+    
     const user = await User.findOne({ email });
     if (!user) {
       return new Response(JSON.stringify({ message: 'Invalid credentials' }), {
@@ -31,7 +25,7 @@ export async function POST(req) {
       });
     }
 
-    // Compare provided password with hashed password
+
     const isMatch = await user.matchPassword(password);
     if (!isMatch) {
       return new Response(JSON.stringify({ message: 'Invalid credentials' }), {
@@ -39,11 +33,10 @@ export async function POST(req) {
         headers: { 'Content-Type': 'application/json' },
       });
     }
-
-    // Generate the session cookie string
+    
     const sessionCookie = generateSessionCookie(user._id.toString());
 
-    // Create the response and set the 'Set-Cookie' header
+  
     const response = new Response(JSON.stringify({
       message: 'Login successful',
       user: { id: user._id, name: user.name, email: user.email },
@@ -51,7 +44,7 @@ export async function POST(req) {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
-        'Set-Cookie': sessionCookie, // Set the cookie here
+        'Set-Cookie': sessionCookie,
       },
     });
 

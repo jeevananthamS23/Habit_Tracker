@@ -1,14 +1,12 @@
-/* src/components/styles/Sidebar.module.css */
-
 .sidebar {
   width: 250px;
   min-width: 200px;
-  background-color: var(--white-color);
+  margin-left: 20px;
   padding: 20px;
-  border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 0 5px var(--shadow-color);
+  box-shadow: 2px 0 5px whitesmoke;
+ 
 }
 
 .sidebarHeader {
@@ -22,20 +20,22 @@
 .filterIcon {
   font-size: 1.5rem;
   margin-right: 10px;
-  color: var(--light-text-color);
+  color: white;
+    text-shadow: 0 0 10px #e1c732;
 }
 
 .allHabitsText {
   font-weight: 600;
-  color: var(--text-color);
+  color: white;
   font-size: 1.1rem;
+    text-shadow: 0 0 10px #e1c732;
 }
 
 .habitList {
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-grow: 1; /* Allows list to take available space */
+  flex-grow: 1; 
 }
 
 .habitItem {
@@ -44,15 +44,15 @@
   padding: 10px 15px;
   margin-bottom: 8px;
   border-radius: 8px;
-  background-color: var(--light-green);
-  color: var(--dark-green);
+  color: whitesmoke;
   font-weight: 500;
+  text-shadow: 0 0 10px rgb(228, 225, 225);
   transition: background-color 0.2s ease, transform 0.1s ease;
   cursor: pointer;
 }
 
 .habitItem:hover {
-  background-color: #dcedc8; /* Slightly darker light green */
+  background-color: #6CB4EE; 
   transform: translateX(3px);
 }
 
@@ -66,11 +66,13 @@
 }
 
 .addHabitButton {
-  background-color: var(--primary-green);
-  color: var(--white-color);
+  background-color:#00CED1;
+  color: white;
+  text-shadow: 0 0 10px yellowgreen;
+  font-weight: 1500;
   padding: 12px 15px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 550;
   border-radius: 8px;
   margin-top: 20px;
   width: 100%;
@@ -78,7 +80,9 @@
 }
 
 .addHabitButton:hover {
-  background-color: var(--dark-green);
+  background-color:#E0FFFF;
+   text-shadow: 0 0 10px rgb(228, 225, 225);
+   color: black;
   transform: translateY(-2px);
 }
 
@@ -86,7 +90,7 @@
   transform: translateY(0);
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .sidebar {
     width: 100%;
@@ -94,10 +98,10 @@
     border-right: none;
     border-bottom: 1px solid var(--border-color);
     padding: 15px;
-    flex-direction: row; /* Horizontal layout for smaller screens */
+    flex-direction: row; 
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allow items to wrap */
+    flex-wrap: wrap; 
   }
 
   .sidebarHeader {
@@ -107,7 +111,7 @@
   }
 
   .habitList {
-    display: none; /* Hide habit list on small screens, can be made toggleable */
+    display: none; 
   }
 
   .addHabitButton {

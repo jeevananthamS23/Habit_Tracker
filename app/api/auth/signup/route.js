@@ -1,6 +1,6 @@
-import dbConnect from '../../../../lib/mongodb'; // Adjust path as necessary
-import User from '../../../../models/User'; // Adjust path as necessary
-import { generateSessionCookie } from '../../../../lib/auth'; // Import the new utility
+import dbConnect from '../../../../lib/mongodb'; 
+import User from '../../../../models/User'; 
+import { generateSessionCookie } from '../../../../lib/auth'; 
 
 export async function POST(req) {
   await dbConnect(); 

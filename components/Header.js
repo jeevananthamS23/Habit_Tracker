@@ -24,7 +24,7 @@ export default function Header({ userName }) {
     <header className={styles.header}>
       <div className={styles.logo}>
         <span className={styles.logoSquare}></span>
-        <span>everyday</span>
+        <span>Streakify</span>
       </div>
       <div className={styles.userInfo}>
         <span className={styles.userIcon}>👤</span>

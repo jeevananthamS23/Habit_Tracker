@@ -24,7 +24,7 @@ export default function HabitRow({ habit, dates, onToggleComplete, onEditHabit, 
             onClick={() => onToggleComplete(habit._id, date)}
           >
     
-            {isCompleted(date) ? '✔️' : new Date(date).getDate()}
+            {isCompleted(date) ? '✔' : new Date(date).getDate()}
           </div>
         ))}
       </div>

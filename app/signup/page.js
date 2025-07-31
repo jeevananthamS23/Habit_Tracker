@@ -40,7 +40,7 @@ export default function SignupPage() {
     <AuthForm
       type="signup"
       title="Start doing it every day!"
-      subtitle="Everyday is free. Forever."
+      subtitle="Streakify is free. Forever."
       buttonText="Sign up"
       onSubmit={handleSignup}
       errorMessage={error}

@@ -1,5 +1,3 @@
-/* src/components/styles/HabitRow.module.css */
-
 .habitRow {
   display: flex;
   align-items: center;
@@ -15,9 +13,8 @@
 }
 
 .controlButton {
-  background-color: var(--light-green);
   color: var(--dark-green);
-  border: 1px solid var(--primary-green);
+  border: 1px solid #87CEFA;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -29,7 +26,7 @@
 }
 
 .controlButton:hover {
-  background-color: var(--primary-green);
+  background-color: whitesmoke;
   color: var(--white-color);
   transform: scale(1.05);
 }
@@ -40,28 +37,32 @@
 
 .habitName {
   font-weight: 500;
-  color: var(--text-color);
-  flex-grow: 1; /* Allows the name to take available space */
+  color: white;
+   text-shadow: 0 0 10px #f0e983;
+   font-weight: bolder;
+  flex-grow: 1; 
 }
 
 .dateGrid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr); /* 7 columns for days of the week */
+  grid-template-columns: repeat(7, 1fr);
   gap: 5px;
   margin-left: 20px;
-  flex-grow: 2; /* Allows the grid to take more space */
-  max-width: 600px; /* Limit max width for grid */
+  flex-grow: 2; 
+  max-width: 600px; 
 }
 
 .dateCell {
-  width: 40px; /* Fixed width for date cells */
-  height: 40px; /* Fixed height for date cells */
+  width: 40px; 
+  height: 40px; 
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
   background-color: var(--light-green);
-  color: var(--dark-green);
+  color: black;
+   text-shadow: 0 0 10px rgb(129, 129, 160);
+  font-weight: bold;
   font-size: 0.9rem;
   cursor: pointer;
   transition: background-color 0.2s ease, transform 0.1s ease;
@@ -73,7 +74,7 @@
 }
 
 .dateCell.completed {
-  background-color: var(--primary-green);
+  background-color: #00FF00;
   color: var(--white-color);
 }
 
@@ -81,10 +82,9 @@
   background-color: var(--dark-green);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .habitRow {
-    flex-wrap: wrap; /* Allow elements to wrap */
+    flex-wrap: wrap; 
     justify-content: center;
     text-align: center;
   }
@@ -102,10 +102,10 @@
   }
 
   .dateGrid {
-    grid-template-columns: repeat(auto-fit, minmax(35px, 1fr)); /* More flexible grid */
+    grid-template-columns: repeat(auto-fit, minmax(35px, 1fr)); 
     margin-left: 0;
     width: 100%;
-    max-width: unset; /* Remove max-width for smaller screens */
+    max-width: unset; 
   }
 
   .dateCell {

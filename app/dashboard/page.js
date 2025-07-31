@@ -2,7 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Header from '@/components/Header';
 import Dashboard from '../../components/Dashboard'; 
+import "./layout.css"
 
 
 export default function DashboardPage() {
@@ -36,5 +38,11 @@ export default function DashboardPage() {
     return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', fontSize: '1.5rem' }}>Loading Dashboard...</div>;
   }
 
-  return <Dashboard userName={userName} />;
+  return (
+    <div className='main'>
+  <Header  userName={userName}></Header>
+ <Dashboard />;
+    </div>
+  )
+   
 }

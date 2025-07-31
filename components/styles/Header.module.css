@@ -1,13 +1,8 @@
-/* src/components/styles/Header.module.css */
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 30px;
-  background-color: var(--white-color);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 2px 5px var(--shadow-color);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -16,8 +11,10 @@
 .logo {
   font-size: 1.8rem;
   font-weight: 700;
-  color: var(--primary-green);
+  color: white;
+   text-shadow: 0 0 10px #FFFF00;
   display: flex;
+ 
   align-items: center;
 }
 
@@ -40,7 +37,7 @@
 }
 
 .userIcon {
-  font-size: 1.2rem; /* Using a simple icon/emoji for user */
+  font-size: 1.2rem;
   background-color: var(--light-green);
   color: var(--dark-green);
   border-radius: 50%;
@@ -54,23 +51,25 @@
 
 .userName {
   font-weight: 600;
-  color: var(--text-color);
+  
+  color:whitesmoke;
+    text-shadow: 0 0 10px whitesmoke;
 }
 
 .logoutButton {
-  background-color: #f44336; /* Red for logout */
+  background-color: #f44336;
   color: var(--white-color);
   padding: 8px 15px;
   font-size: 0.9rem;
   border-radius: 6px;
   transition: background-color 0.3s ease;
+  box-shadow:rgb(232, 67, 67) 0px 5px 15px;
 }
 
 .logoutButton:hover {
   background-color: #d32f2f;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
